@@ -2,9 +2,9 @@
 # What is it?
 This is a plugin for SCP: Secret Laboratory
 # plugin content
-939-89 have chance to scp682 when it spawn，682 has following abilities:
+939-89 have chance to scp682 when it spawn，682 has this abilities:
 
-682 has more hp，if 682 hp less than max hp，682 will automatic heal hp
+682 has more hp，if 682 hp less than max hp，682 will heal hp with time
 
 682 can destroy door like 096
 
