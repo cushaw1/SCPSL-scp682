@@ -3,11 +3,17 @@
 This is a plugin for SCP: Secret Laboratory
 # plugin content
 939-89 have chance to scp682 when it spawn，682 has following abilities:
+
 682 has more hp.and 682 can automatic heal himself over time
+
 682 can destroy door like 096
+
 682 can eat hunman to heal（can exceed HP max limit）
+
 682 has hig attack damage
+
 PS:682 still blind because it use role.SCP939
+
 # How do I use it?
 i need to test this plugin,please wait
 
