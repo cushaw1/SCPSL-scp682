@@ -4,7 +4,7 @@ This is a plugin for SCP: Secret Laboratory
 # plugin content
 939-89 have chance to scp682 when it spawn，682 has following abilities:
 
-682 has more hp.and 682 can automatic heal himself over time
+682 has more hp，if 682 hp less than max hp，682 will automatic heal hp
 
 682 can destroy door like 096
 
