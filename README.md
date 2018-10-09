@@ -15,9 +15,7 @@ This is a plugin for SCP: Secret Laboratory
 PS:682 still blind because it use role.SCP939
 
 # How do I use it?
-download the dll from 
-
-i need to test this plugin,please wait
+download the dll from （i need to test this plugin,please wait）
 
 put it in the folder titled sm_plugins.
 
