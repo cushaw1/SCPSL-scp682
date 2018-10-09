@@ -8,7 +8,7 @@ This is a plugin for SCP: Secret Laboratory
 
 682 can destroy door like 096
 
-682 can eat hunman to heal（can exceed HP max limit）
+682 can eat hunman to heal hp（can exceed max HP limit）
 
 682 has hig attack damage
 
