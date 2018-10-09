@@ -1,0 +1,6 @@
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\scp682\scp682\bin\Debug\scp682.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\scp682\scp682\bin\Debug\scp682.pdb
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\scp682\scp682\bin\Debug\Smod2.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\scp682\scp682\obj\Debug\scp682.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\scp682\scp682\obj\Debug\scp682.dll
+C:\Users\Administrator\Documents\Visual Studio 2015\Projects\scp682\scp682\obj\Debug\scp682.pdb
