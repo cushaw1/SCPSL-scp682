@@ -26,8 +26,8 @@ Config Option | Value Type | Default Value | Description
 scp682_enable | Boolean | True | SCP-682 plugin enable/disable
 scp682_door | Boolean | True | SCP-682 destroy door enable/disable
 scp682_spawn | Integer | 30 | 682 spawn probability(%)
-scp682_hp | Integer | 3000 | 682 HP
+scp682_hp | Integer | 3000 | 682 max HP
 scp682_heal | Integer | 5 | 682 automatic heal hp
-scp682_healtime | Integer | 1 | 682 automatic heal time(secnod)
+scp682_healtime | Integer | 1 | 682 automatic heal time(s)
 scp682_attack | Integer | 200 | 682 attack damage
 scp682_eat | Integer | 100 | 682 eat human heal hp
