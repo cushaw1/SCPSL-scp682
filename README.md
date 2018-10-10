@@ -2,15 +2,15 @@
 # What is it?
 This is a plugin for SCP: Secret Laboratory
 # plugin content
-939-89 have chance to scp682 when it spawn，682 has this abilities:
+939-89 have chance to be scp682 when it spawn，682 has this abilities:
 
-682 has more hp，if 682 hp less than max hp，682 will heal hp with time
+682 can heal hp with time(can move)
 
 682 can destroy door like 096
 
-682 can eat hunman to heal hp（can exceed max HP limit）
+682 can kill hunman one hit
 
-682 has hig attack damage
+682 can eat human to heal hp with attacked
 
 PS:682 still blind because it use role.SCP939
 
@@ -19,15 +19,17 @@ download the dll from （i need to test this plugin,please wait）
 
 put it in the folder titled sm_plugins.
 
-you shuold set online_mode: true,because it use steamID
+set online_mode: true,because it use steamID
+
+if you use scp_healing_duration,set scp682_maxhp <= scp939_89_hp
 # Config Options
 Config Option | Value Type | Default Value | Description
 --- | :---: | :---: | ---
 scp682_enable | Boolean | True | SCP-682 plugin enable/disable
 scp682_door | Boolean | True | SCP-682 destroy door enable/disable
+scp682_kill | Boolean | True | SCP-682 kill player one hit enable/disable
 scp682_spawn | Integer | 30 | 682 spawn probability(%)
-scp682_hp | Integer | 3000 | 682 max HP
+scp682_maxhp | Integer | 2200 | 682 healing max hp(automatic heal and eat heal)
 scp682_heal | Integer | 5 | 682 automatic heal hp
 scp682_healtime | Integer | 1 | 682 automatic heal time(s)
-scp682_attack | Integer | 200 | 682 attack damage
 scp682_eat | Integer | 100 | 682 eat human heal hp
