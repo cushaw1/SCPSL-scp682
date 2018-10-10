@@ -29,6 +29,6 @@ scp682_door | Boolean | True | SCP-682 destroy door enable/disable
 scp682_kill | Boolean | True | SCP-682 kill player one hit enable/disable
 scp682_spawn | Integer | 30 | 682 spawn probability(%)
 scp682_maxhp | Integer | 2200 | 682 healing max hp(automatic heal and eat heal)
-scp682_heal | Integer | 5 | 682 automatic heal hp
-scp682_healtime | Integer | 1 | 682 automatic heal time(s)
-scp682_eat | Integer | 100 | 682 eat human heal hp
+scp682_heal_hp | Integer | 5 | 682 automatic heal hp
+scp682_heal_time | Integer | 1 | 682 automatic heal time(s)
+scp682_eat_hp | Integer | 100 | 682 eat human heal hp
