@@ -4,13 +4,13 @@ This is a plugin for SCP: Secret Laboratory
 # plugin content
 939-89 have chance to be scp682 when it spawn，682 has this abilities:
 
-682 can heal hp with time(can move)
+682 can healing hp with time(can move)
 
 682 can destroy door like 096
 
 682 can kill hunman one hit
 
-682 can eat human to heal hp with attacked
+682 can eat human to healing hp with attacked
 
 PS:682 still blind because it use role.SCP939
 
