@@ -18,7 +18,8 @@ This is a plugin for SCP: Secret Laboratory | 这是SCP:秘密实验室的插件
 | 682每次攻击可以吃掉敌人来回血
 
 PS:682 still blind because it use role.SCP939,682 has red rank SCP-682
-| 682仍旧是瞎子因为他用的是939模型
+
+PS:682仍旧是瞎子因为他用的是939模型，682有一个红色的头衔SCP-682表明身份
 
 # How do I use it? | 我如何使用它？
 download the dll from [here](https://github.com/cushaw1/SCP-682/releases/tag/1.2)
