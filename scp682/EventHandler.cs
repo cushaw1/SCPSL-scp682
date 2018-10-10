@@ -54,7 +54,7 @@ namespace scp_682
             eat = plugin.GetConfigInt("scp682_eat_hp");
             kill = plugin.GetConfigBool("scp682_kill");
             max = plugin.GetConfigInt("scp682_heal_maxhp");
-            if (scp682.Contains(ev.Attacker.SteamId) && ev.Player.TeamRole.Role != Role.SCP_939_89 && ev.DamageType != DamageType.NUKE)
+            if (scp682.Contains(ev.Attacker.SteamId) && ev.Player.TeamRole.Team != Team.SCP && ev.DamageType != DamageType.NUKE)
             {
                 if (kill == true)
                 {
@@ -63,7 +63,7 @@ namespace scp_682
                 if (ev.Attacker.GetHealth() < max)
                 {
                     ev.Attacker.AddHealth(eat);
-                    plugin.Info("scp682 eat "+ ev.Player.Name);
+
                 }
             }
         }
@@ -97,7 +97,12 @@ namespace scp_682
                 {
                     server.GetPlayers().ForEach(a =>
                     {
-                        if (scp682.Contains(a.SteamId) && a.GetHealth() < max)
+                        if (a.TeamRole.Role != Role.SCP_939_89 && scp682.Contains(a.SteamId))
+                        {
+                            scp682.Remove(a.SteamId);
+                            a.SetRank("white", " ");
+                        }
+                        if (a.TeamRole.Team == Team.SCP && scp682.Contains(a.SteamId) && a.GetHealth() < max)
                         {
                               a.AddHealth(heal);
                         }
