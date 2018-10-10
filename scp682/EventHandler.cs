@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Smod2;
 using Smod2.EventHandlers;
 using Smod2.Events;
@@ -7,16 +7,16 @@ using System.Collections.Generic;
 
 namespace scp_682
 {
-    class EventHandler : IEventHandlerPlayerDie, IEventHandlerPlayerHurt, IEventHandlerUpdate, IEventHandlerDoorAccess, IEventHandlerSpawn, IEventHandlerRoundStart, IEventHandlerRoundEnd
+    class EventHandler : IEventHandlerPlayerDie, IEventHandlerPlayerHurt, IEventHandlerUpdate, IEventHandlerDoorAccess, IEventHandlerSpawn, IEventHandlerRoundEnd
     {
         private Plugin plugin;
         private Server server;
         private int time = 1;
         private bool enabled = true;
         private bool door = true;
-        private int hp = 3000;
-        private int attack = 300;
+        private bool kill = true;
         private int eat = 100;
+        private int max = 2200;
         private int heal = 5;
         private int random = 30;
         public static List<string> scp682 = new List<string>();
@@ -29,7 +29,8 @@ namespace scp_682
 
         public void OnDoorAccess(PlayerDoorAccessEvent ev)
         {
-            if (enabled == true && door == true && scp682.Contains(ev.Player.SteamId) && ev.Player.TeamRole.Role == Role.SCP_939_89)
+            door = plugin.GetConfigBool("scp682_door");
+            if (door == true && scp682.Contains(ev.Player.SteamId))
             {
                 ev.Destroy = true;
             }
@@ -37,38 +38,58 @@ namespace scp_682
 
         public void OnPlayerDie(PlayerDeathEvent ev)
         {
-            if (enabled == true && ev.Player.TeamRole.Role == Role.SCP_939_89 && scp682.Contains(ev.Player.SteamId))
+            if (enabled == true && ev.Player.TeamRole.Role == Role.SCP_939_89 )
             {
-               ev.Player.SetRank("white", " ");
-               scp682.Remove(ev.Player.SteamId);
+                if (scp682.Contains(ev.Player.SteamId))
+                {
+                    scp682.Remove(ev.Player.SteamId);
+                    ev.Player.SetRank("white", " ");
+                    plugin.Info("scp682 " +ev.Player.Name + " dead");
+                }
             }
         }
 
         public void OnPlayerHurt(PlayerHurtEvent ev)
         {
-            if (enabled == true && scp682.Contains(ev.Player.SteamId) && ev.Attacker.TeamRole.Role == Role.SCP_939_89)
+            eat = plugin.GetConfigInt("scp682_eat_hp");
+            kill = plugin.GetConfigBool("scp682_kill");
+            max = plugin.GetConfigInt("scp682_heal_maxhp");
+            if (scp682.Contains(ev.Attacker.SteamId) && ev.Player.TeamRole.Role != Role.SCP_939_89 && ev.DamageType != DamageType.NUKE)
             {
-                ev.Player.Damage(attack, DamageType.SCP_939);
-                ev.Attacker.SetHealth(ev.Attacker.GetHealth() + eat, DamageType.SCP_939);
+                if (kill == true)
+                {
+                    ev.Player.Kill(DamageType.SCP_939);
+                }
+                if (ev.Attacker.GetHealth() < max)
+                {
+                    ev.Attacker.AddHealth(eat);
+                    plugin.Info("scp682 eat "+ ev.Player.Name);
+                }
             }
         }
 
         public void OnSpawn(PlayerSpawnEvent ev)
         {
+            enabled = plugin.GetConfigBool("scp682_enable");
+            random = plugin.GetConfigInt("scp682_spawn");
             if (enabled == true && ev.Player.TeamRole.Role == Role.SCP_939_89)
             {
               int s = new Random().Next(0, 100);
               if (s <= random)
               {
-                ev.Player.SetHealth(hp, DamageType.SCP_939);
                 ev.Player.SetRank("red", "SCP-682");
                 scp682.Add(ev.Player.SteamId);
-                }
+                plugin.Info(ev.Player.Name + " became scp682");
+               }
             }
         }
         DateTime updateTimer = DateTime.Now;
         public void OnUpdate(UpdateEvent ev)
         {
+            enabled = plugin.GetConfigBool("scp682_enable");
+            time = plugin.GetConfigInt("scp682_heal_time");
+            heal = plugin.GetConfigInt("scp682_heal_hp");
+            max = plugin.GetConfigInt("scp682_heal_maxhp");
             if (enabled == true && updateTimer < DateTime.Now)
             {
                 updateTimer = DateTime.Now.AddSeconds(time);
@@ -76,28 +97,14 @@ namespace scp_682
                 {
                     server.GetPlayers().ForEach(a =>
                     {
-                        if ((a.TeamRole.Team != Team.SCP && a.TeamRole.Team != Team.SPECTATOR) && scp682.Contains(a.SteamId))
+                        if (scp682.Contains(a.SteamId) && a.GetHealth() < max)
                         {
-                          if (hp < a.GetHealth())
-                          a.SetHealth(a.GetHealth() + heal, DamageType.SCP_939);
+                              a.AddHealth(heal);
                         }
                     });
                 }
             }
         }
-
-        public void OnRoundStart(RoundStartEvent ev)
-        {
-            scp682.Clear();
-            enabled = plugin.GetConfigBool("scp682_enable");
-            door = plugin.GetConfigBool("scp682_door");
-            time = plugin.GetConfigInt("scp682_healtime");
-            hp = plugin.GetConfigInt("scp682_hp");
-            random = plugin.GetConfigInt("scp682_spawn");
-            eat = plugin.GetConfigInt("scp682_eat");
-            attack = plugin.GetConfigInt("scp682_attack") - 60;
-        }
-
         public void OnRoundEnd(RoundEndEvent ev)
         {
             scp682.Clear();
