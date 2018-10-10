@@ -1,7 +1,7 @@
 # SCP-682
-# What is it?
-This is a plugin for SCP: Secret Laboratory
-# plugin content
+# What is it? | 这是啥？
+This is a plugin for SCP: Secret Laboratory | 这是SCP:秘密实验室的插件
+# plugin content | 插件内容
 939-89 have chance to be scp682 when it spawn，682 has this abilities:
 | 939-89出生时有几率变成SCP682，,682有以下技能：
 
@@ -20,7 +20,7 @@ This is a plugin for SCP: Secret Laboratory
 PS:682 still blind because it use role.SCP939,682 has red rank SCP-682
 | 682仍旧是瞎子因为他用的是939模型
 
-# How do I use it?
+# How do I use it? | 我如何使用它？
 download the dll from [here](https://github.com/cushaw1/SCP-682/releases/tag/1.2)
 | 点击下载 [插件](https://github.com/cushaw1/SCP-682/releases/tag/1.2)
 
