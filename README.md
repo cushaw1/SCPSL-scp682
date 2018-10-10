@@ -3,32 +3,32 @@
 This is a plugin for SCP: Secret Laboratory
 # plugin content
 939-89 have chance to be scp682 when it spawn，682 has this abilities:
-|939-89出生时有几率变成SCP682，,682有以下技能：
+| 939-89出生时有几率变成SCP682，,682有以下技能：
 
 682 can healing hp with time(can move)
-|682可以随时间回血（走路也能回）
+| 682可以随时间回血（走路也能回）
 
 682 can destroy door like 096
-|682可以像096一样拆门
+| 682可以像096一样拆门
 
 682 can kill hunman one hit
-|682可以秒杀人类玩家
+| 682可以秒杀人类玩家
 
 682 can eat human to healing hp with attacked
-|682每次攻击可以吃掉敌人来回血
+| 682每次攻击可以吃掉敌人来回血
 
 PS:682 still blind because it use role.SCP939,682 has red rank SCP-682
-|682仍旧是瞎子因为他用的是939模型
+| 682仍旧是瞎子因为他用的是939模型
 
 # How do I use it?
 download the dll from [here](https://github.com/cushaw1/SCP-682/releases/tag/1.2)
-|点击下载 [插件](https://github.com/cushaw1/SCP-682/releases/tag/1.2)
+| 点击下载 [插件](https://github.com/cushaw1/SCP-682/releases/tag/1.2)
 
 put it in the folder titled sm_plugins.
-|把插件放入sm_plugins文件夹内
+| 把插件放入sm_plugins文件夹内
 
 set online_mode: true,because it use steamID
-|设置set online_mode: true，因为插件使用了steamID
+| 设置set online_mode: true，因为插件使用了steamID
 
 if you use scp_healing_duration,set scp682_maxhp <= scp939_89_hp
 
