@@ -12,8 +12,7 @@ This is a plugin for SCP: Secret Laboratory
 
 682 can eat human to healing hp with attacked
 
-PS:682 still blind because it use role.SCP939
-682 has red rank SCP-682
+PS:682 still blind because it use role.SCP939,682 has red rank SCP-682
 # How do I use it?
 download the dll from [here](https://github.com/cushaw1/SCP-682/releases/tag/1.1)
 
