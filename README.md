@@ -22,8 +22,8 @@ PS:682 still blind because it use role.SCP939,682 has red rank SCP-682
 PS:682仍旧是瞎子因为他用的是939模型，682有一个红色的头衔SCP-682表明身份
 
 # How do I use it? | 我如何使用它？
-download the dll from [here](https://github.com/cushaw1/SCP-682/releases/tag/1.2)
-| 点击下载 [插件](https://github.com/cushaw1/SCP-682/releases/tag/1.2)
+download the dll from [here](https://github.com/cushaw1/SCPSL-scp682/releases/tag/1.2)
+| 点击下载 [插件](https://github.com/cushaw1/SCPSL-scp682/releases/tag/1.2)
 
 put it in the folder titled sm_plugins.
 | 把插件放入sm_plugins文件夹内
