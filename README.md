@@ -29,7 +29,7 @@ put it in the folder titled sm_plugins.
 | 把插件放入sm_plugins文件夹内
 
 set online_mode: true,because it use steamID
-| 设置set online_mode: true，因为插件使用了steamID
+| 设置online_mode: true，因为插件使用了steamID
 
 if you use scp_healing_duration,set scp682_maxhp <= scp939_89_hp
 
