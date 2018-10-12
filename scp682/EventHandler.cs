@@ -19,6 +19,7 @@ namespace scp_682
         private int max = 2200;
         private int heal = 5;
         private int random = 30;
+        private int doorrandom = 100;
         public static List<string> scp682 = new List<string>();
 
         public EventHandler(Plugin plugin)
@@ -30,9 +31,14 @@ namespace scp_682
         public void OnDoorAccess(PlayerDoorAccessEvent ev)
         {
             door = plugin.GetConfigBool("scp682_door");
+            doorrandom = plugin.GetConfigInt("scp682_door_chance");
             if (door == true && scp682.Contains(ev.Player.SteamId))
             {
-                ev.Destroy = true;
+                int d = new Random().Next(0, 100);
+                if (d <= doorrandom)
+                {
+                    ev.Destroy = true;
+                }
             }
         }
 
