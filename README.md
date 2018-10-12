@@ -54,8 +54,8 @@ scp682_eat_hp | Integer | 100 | 682 eat human heal hp
 scp682_enable | 布尔值 | True | 开启/关闭插件
 scp682_door | 布尔值 | True | 开启/关闭682破坏门功能
 scp682_kill | 布尔值 | True | 开启/关闭682秒杀功能
-scp682_spawn | 整数 | 30 | 682出生几率（%）
-scp682_door_chance| 整数 | 100 | 682 拆门几率(%)
+scp682_spawn | 整数 | 30 | 682出生几率(%)
+scp682_door_chance| 整数 | 100 | 682拆门几率(%)
 scp682_maxhp | 整数 | 2200 | 682回血最大值（自动回血与吃人回血）
 scp682_heal_hp | 整数 | 5 | 682自动回血值
 scp682_heal_time | 整数 | 1 | 682每隔多长时间回血（秒）
