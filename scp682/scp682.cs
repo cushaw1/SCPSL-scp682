@@ -9,7 +9,7 @@ namespace scp682
     name = "scp682",
     description = "939-89 maybe become 682",
     id = "cushaw.scp682",
-    version = "1.3",
+    version = "1.4",
     SmodMajor = 3,
     SmodMinor = 1,
     SmodRevision = 19
@@ -32,6 +32,7 @@ namespace scp682
             this.AddConfig(new Smod2.Config.ConfigSetting("scp682_enable", true, Smod2.Config.SettingType.BOOL, true, "682 plugin enable/disable"));
             this.AddConfig(new Smod2.Config.ConfigSetting("scp682_door", true, Smod2.Config.SettingType.BOOL, true, "682 destroy door enable/disable"));
             this.AddConfig(new Smod2.Config.ConfigSetting("scp682_kill", true, Smod2.Config.SettingType.BOOL, true, "682 kill human by one attack enable/disable"));
+            this.AddConfig(new Smod2.Config.ConfigSetting("scp682_door_eat", true, Smod2.Config.SettingType.BOOL, true, "682 destroy door when 682 eat hunman enable/disable"));
             this.AddConfig(new Smod2.Config.ConfigSetting("scp682_spawn", 30, Smod2.Config.SettingType.NUMERIC, true, "	682 spawn probability(%)"));
             this.AddConfig(new Smod2.Config.ConfigSetting("scp682_door_chance", 100, Smod2.Config.SettingType.NUMERIC, true, "	682 destroy door probability(%)"));
             this.AddConfig(new Smod2.Config.ConfigSetting("scp682_heal_hp",5, Smod2.Config.SettingType.NUMERIC, true, "682 automatic heal hp"));
