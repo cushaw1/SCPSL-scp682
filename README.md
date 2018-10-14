@@ -22,8 +22,8 @@ PS:682 still blind because it use role.SCP939,682 has red rank SCP-682
 PS:682仍旧是瞎子因为他用的是939模型，682有一个红色的头衔SCP-682表明身份
 
 # How do I use it? | 我如何使用它？
-download the dll from [here](https://github.com/cushaw1/SCPSL-scp682/releases/tag/1.4)
-| 点击下载 [插件](https://github.com/cushaw1/SCPSL-scp682/releases/tag/1.4)
+download the dll from [here](https://github.com/cushaw1/SCPSL-scp682/releases/tag/1.4.1)
+| 点击下载 [插件](https://github.com/cushaw1/SCPSL-scp682/releases/tag/1.4.1)
 
 put it in the folder titled sm_plugins.
 | 把插件放入sm_plugins文件夹内
@@ -35,10 +35,14 @@ if you use scp_healing_duration,set scp682_maxhp <= scp939_89_hp
 
 如果你使用了scp_healing_duration让scp们可以站立回血，请把scp682_maxhp的值设置小于scp939_89_hp的值
 
-new config scp682_door_eat,if set true,scp682_door_chance will now work(682 can only destroy door after eat human，1 hunman = 1 door)
+new config scp682_door_eat,if set true,scp682_door_chance will now work
+
+682 will have power after eat human，one power can destroy one door
 
 新的参数scp682_door_eat，如果设置为true，scp682_door_chance参数就没用了（682吃掉一个人后可以撞破一扇门，一条人=一扇门）
 
+if this round has many 682，they ues same power number(682A eat hunman,682B can destroy door)
+如果这局有一堆682的话，他们共用吃人拆门的次数（如果682a吃了一个人，那么682b也可以拆门，之后拆门能力就会消失）
 # Config Options （English）
 Config Option | Value Type | Default Value | Description
 --- | :---: | :---: | ---
