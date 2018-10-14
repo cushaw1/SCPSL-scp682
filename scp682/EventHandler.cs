@@ -1,4 +1,3 @@
-using System;
 using Smod2;
 using Smod2.EventHandlers;
 using Smod2.Events;
@@ -14,8 +13,10 @@ namespace scp_682
         private int time = 1;
         private bool enabled = true;
         private bool door = true;
+        private bool dooreat = true;
         private bool kill = true;
         private int eat = 100;
+        private int[] e = null;
         private int max = 2200;
         private int heal = 5;
         private int random = 30;
@@ -31,13 +32,25 @@ namespace scp_682
         public void OnDoorAccess(PlayerDoorAccessEvent ev)
         {
             door = plugin.GetConfigBool("scp682_door");
+            dooreat = plugin.GetConfigBool("scp682_door_eat");
             doorrandom = plugin.GetConfigInt("scp682_door_chance");
             if (door == true && scp682.Contains(ev.Player.SteamId))
             {
-                int d = new Random().Next(0, 100);
-                if (d <= doorrandom)
+                if (dooreat == true)
                 {
-                    ev.Destroy = true;
+                    if (0 < e[ev.Player.PlayerId])
+                    {
+                        ev.Destroy = true;
+                        e[ev.Player.PlayerId]= e[ev.Player.PlayerId] - 1;
+                    }
+                }
+                else
+                {
+                    int d = new Random().Next(0, 100);
+                    if (d <= doorrandom)
+                    {
+                        ev.Destroy = true;
+                    }
                 }
             }
         }
@@ -62,6 +75,7 @@ namespace scp_682
             max = plugin.GetConfigInt("scp682_heal_maxhp");
             if (scp682.Contains(ev.Attacker.SteamId) && ev.Player.TeamRole.Team != Team.SCP && ev.DamageType != DamageType.NUKE)
             {
+                e[ev.Attacker.PlayerId] = e[ev.Attacker.PlayerId] + 1;
                 if (kill == true)
                 {
                     ev.Player.Kill(DamageType.SCP_939);
