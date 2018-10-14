@@ -38,10 +38,10 @@ namespace scp_682
             {
                 if (dooreat == true)
                 {
-                    if (0 < e[ev.Player.PlayerId])
+                    if (0 < e)
                     {
                         ev.Destroy = true;
-                        e[ev.Player.PlayerId]= e[ev.Player.PlayerId] - 1;
+                        e--;
                     }
                 }
                 else
@@ -73,9 +73,9 @@ namespace scp_682
             eat = plugin.GetConfigInt("scp682_eat_hp");
             kill = plugin.GetConfigBool("scp682_kill");
             max = plugin.GetConfigInt("scp682_heal_maxhp");
+            dooreat = plugin.GetConfigBool("scp682_door_eat");
             if (scp682.Contains(ev.Attacker.SteamId) && ev.Player.TeamRole.Team != Team.SCP && ev.DamageType != DamageType.NUKE)
             {
-                e[ev.Attacker.PlayerId] = e[ev.Attacker.PlayerId] + 1;
                 if (kill == true)
                 {
                     ev.Player.Kill(DamageType.SCP_939);
@@ -83,7 +83,10 @@ namespace scp_682
                 if (ev.Attacker.GetHealth() < max)
                 {
                     ev.Attacker.AddHealth(eat);
-
+                }
+                if (dooreat == true)
+                {
+                    e++;
                 }
             }
         }
