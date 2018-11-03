@@ -22,8 +22,8 @@ PS:682 still blind because it use role.SCP939,682 has red rank SCP-682
 PS:682仍旧是瞎子因为他用的是939模型，682有一个红色的头衔SCP-682表明身份
 
 # How do I use it? | 我如何使用它？
-download the dll from [here](https://github.com/cushaw1/SCPSL-scp682/releases/tag/1.4.1)
-| 点击下载 [插件](https://github.com/cushaw1/SCPSL-scp682/releases/tag/1.4.1)
+download the dll from [here](https://github.com/cushaw1/SCPSL-scp682/releases/tag/1.4.3)
+| 点击下载 [插件](https://github.com/cushaw1/SCPSL-scp682/releases/tag/1.4.3)
 
 put it in the folder titled sm_plugins.
 | 把插件放入sm_plugins文件夹内
@@ -49,6 +49,7 @@ Config Option | Value Type | Default Value | Description
 scp682_enable | Boolean | True | SCP-682 plugin enable/disable
 scp682_door | Boolean | True | SCP-682 destroy door enable/disable
 scp682_door_eat | Boolean | True | SCP-682 destroy door when 682 eated enable/disabl
+scp682_door_number | Integer | 3 | 682 destroy door power number when game start
 scp682_kill | Boolean | True | SCP-682 kill player one hit enable/disable
 scp682_spawn | Integer | 30 | 682 spawn probability(%)
 scp682_door_chance| Integer | 100 | 682 destroy door probability(%)
@@ -63,6 +64,7 @@ scp682_eat_hp | Integer | 100 | 682 eat human heal hp
 scp682_enable | 布尔值 | True | 开启/关闭插件
 scp682_door | 布尔值 | True | 开启/关闭682破坏门功能
 scp682_door_eat | Boolean | True | 开启/关闭682吃一个人撞一扇门功能
+scp682_door_number | 整数 | 3 | 682开局的破坏门次数
 scp682_kill | 布尔值 | True | 开启/关闭682秒杀功能
 scp682_spawn | 整数 | 30 | 682出生几率(%)
 scp682_door_chance| 整数 | 100 | 682拆门几率(%)
