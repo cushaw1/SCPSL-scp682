@@ -9,10 +9,10 @@ namespace scp682
     name = "scp682",
     description = "939-89 maybe become 682",
     id = "cushaw.scp682",
-    version = "1.4",
+    version = "1.4.3",
     SmodMajor = 3,
     SmodMinor = 1,
-    SmodRevision = 19
+    SmodRevision = 21
     )]
     class scp682 : Plugin
     {
@@ -39,6 +39,5 @@ namespace scp682
             this.AddConfig(new Smod2.Config.ConfigSetting("scp682_heal_time", 1, Smod2.Config.SettingType.NUMERIC, true, "682 automatic heal time(s)"));
             this.AddConfig(new Smod2.Config.ConfigSetting("scp682_heal_maxhp", 2200, Smod2.Config.SettingType.NUMERIC, true, "682 heal max HP"));
             this.AddConfig(new Smod2.Config.ConfigSetting("scp682_eat_hp", 100, Smod2.Config.SettingType.NUMERIC, true, "682 heal HP with eat human"));
+            this.AddConfig(new Smod2.Config.ConfigSetting("scp682_door_number", 3, Smod2.Config.SettingType.NUMERIC, true, "682 destroy door number when start"));
         }
-    }
-}
