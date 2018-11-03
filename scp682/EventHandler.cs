@@ -75,7 +75,7 @@ namespace scp_682
             kill = plugin.GetConfigBool("scp682_kill");
             max = plugin.GetConfigInt("scp682_heal_maxhp");
             dooreat = plugin.GetConfigBool("scp682_door_eat");
-            if (scp682.Contains(ev.Attacker.SteamId) && ev.Player.TeamRole.Team != Team.SCP && ev.DamageType != DamageType.NUKE)
+            if (scp682.Contains(ev.Attacker.SteamId) && ev.Player.TeamRole.Team != Team.SCP && ev.DamageType != DamageType.NUKE && ev.DamageType != DamageType.WALL && ev.DamageType != DamageType.TESLA)
             {
                 if (kill == true)
                 {
@@ -98,8 +98,7 @@ namespace scp_682
             random = plugin.GetConfigInt("scp682_spawn");
             if (enabled == true && ev.Player.TeamRole.Role == Role.SCP_939_89)
             {
-                plugin.Info(ev.Player.Name + " became 939-89");
-                int s = new Random().Next(0, 100);
+              int s = new Random().Next(0, 100);
               if (s <= random)
               {
                 ev.Player.SetRank("red", "SCP-682");
