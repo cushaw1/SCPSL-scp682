@@ -1,3 +1,4 @@
+using System;
 using Smod2;
 using Smod2.EventHandlers;
 using Smod2.Events;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 
 namespace scp_682
 {
-    class EventHandler : IEventHandlerPlayerDie, IEventHandlerPlayerHurt, IEventHandlerUpdate, IEventHandlerDoorAccess, IEventHandlerSpawn, IEventHandlerRoundEnd
+    class EventHandler : IEventHandlerPlayerDie, IEventHandlerPlayerHurt, IEventHandlerUpdate, IEventHandlerDoorAccess, IEventHandlerSetRole, IEventHandlerRoundEnd, IEventHandlerRoundStart
     {
         private Plugin plugin;
         private Server server;
@@ -16,7 +17,7 @@ namespace scp_682
         private bool dooreat = true;
         private bool kill = true;
         private int eat = 100;
-        private int[] e = null;
+        private int e = 3;
         private int max = 2200;
         private int heal = 5;
         private int random = 30;
@@ -86,18 +87,19 @@ namespace scp_682
                 }
                 if (dooreat == true)
                 {
-                    e++;
+                  e++;
                 }
             }
         }
 
-        public void OnSpawn(PlayerSpawnEvent ev)
+        public void OnSetRole(PlayerSetRoleEvent ev)
         {
             enabled = plugin.GetConfigBool("scp682_enable");
             random = plugin.GetConfigInt("scp682_spawn");
             if (enabled == true && ev.Player.TeamRole.Role == Role.SCP_939_89)
             {
-              int s = new Random().Next(0, 100);
+                plugin.Info(ev.Player.Name + " became 939-89");
+                int s = new Random().Next(0, 100);
               if (s <= random)
               {
                 ev.Player.SetRank("red", "SCP-682");
@@ -125,9 +127,13 @@ namespace scp_682
                             scp682.Remove(a.SteamId);
                             a.SetRank("white", " ");
                         }
-                        if (a.TeamRole.Team == Team.SCP && scp682.Contains(a.SteamId) && a.GetHealth() < max)
+                        if (a.TeamRole.Role == Role.SCP_939_89 && scp682.Contains(a.SteamId) && a.GetHealth() < max)
                         {
                               a.AddHealth(heal);
+                        }
+                        if (a.TeamRole.Role != Role.SCP_939_89 && scp682.Contains(a.SteamId) && a.GetHealth() > max)
+                        {
+                            a.SetHealth(max);
                         }
                     });
                 }
@@ -136,6 +142,11 @@ namespace scp_682
         public void OnRoundEnd(RoundEndEvent ev)
         {
             scp682.Clear();
+        }
+
+        public void OnRoundStart(RoundStartEvent ev)
+        {
+            e = plugin.GetConfigInt("scp682_door_number");
         }
     }
 }
